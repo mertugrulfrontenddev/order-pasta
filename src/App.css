@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgb(241, 238, 238) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-list {
+  border-radius: 10px; /* Kenarları yuvarlatalım */
+  padding: 0; /* Padding eklemeyelim */
+
+  overflow: hidden; /* Eğer içerik sığmazsa, taşmayı engelliyoruz */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dessert-image {
+  width: 75%;
+  height: auto; /* Yüksekliği orantılı tutar */
+  object-fit: cover; /* Resmi kesmeden genişletir */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.add-chart {
+  position: absolute;
+
+  bottom: 5px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+  background-color: white;
+
+  border-radius: 10px;
+  border: 1px solid orange;
+
+  cursor: pointer;
+}
+
+.count-statue {
+  position: absolute;
+
+  bottom: 5px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+  background-color: rgb(255, 102, 0);
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid orange;
+
+  cursor: pointer;
+  display: flex; /* Butonları yatayda hizalamak için */
+  justify-content: space-between; /* Butonları ortalayacağız */
+  align-items: center; /* Dikeyde ortalayacağız */
+  gap: 10px;
+}
+
+.hover:hover {
+  color: orange;
+}
+.quantity-button {
+  background-color: transparent; /* Arka planı şeffaf yapalım */
+  border: 1px solid #ffffff; /* Yuvarlak sınır */
+  border-radius: 50%; /* Yuvarlak yapmak için border-radius */
+  width: 22px; /* Butonun genişliği */
+  height: 22px; /* Butonun yüksekliği */
+
+  font-size: 15px; /* Yazı boyutunu ayarlayalım */
+  color: #ffffff; /* Yazı rengini siyah yapalım */
+  cursor: pointer; /* Butona tıklanabilirlik koyalım */
+  margin: 0 10px; /* Butonlar arasında boşluk */
+  display: flex; /* Flex ile içerikleri ortalayacağız */
+  justify-content: center; /* Yatayda ortalama */
   align-items: center;
+}
+
+.overlay {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.479);
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.content-order {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 50px;
+  position: relative;
+  min-width: 30%;
+}
+
+.close {
+  position: absolute;
+
+  left: 520px;
+  top: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 30px;
+}
+
+.close:hover {
+  background-color: orangered;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  cursor: pointer;
 }
